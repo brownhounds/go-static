@@ -1,0 +1,14 @@
+services:
+  static-server:
+    build:
+      context: .
+    environment:
+      - PORT=8090
+      - IS_SPA=false
+      - SPA_ENTRYPOINT=index.html
+      - STATIC_FOLDER=/app
+      - PUBLIC_PATH=/
+    volumes:
+      - ./dist:/app
+    ports:
+      - 8090:8090
