@@ -1,5 +1,7 @@
 FROM golang:alpine AS builder
 
+LABEL org.opencontainers.image.source https://github.com/brownhounds/go-static
+
 RUN apk update && apk add --no-cache git
 WORKDIR $GOPATH/src/mypackage/myapp/
 
